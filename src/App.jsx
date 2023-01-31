@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 function App() {
     // !hooks:
-    const [categorias, setCategorias] = useState(['Nasa']); //img predeterminada al inicio
+    const [categorias, setCategorias] = useState(['Nasa']); //img predeterminada al inicio!
 
     const agragarCategoria = (nuevaCategoria) => {
         /* setCategorias([...categorias, 'Dragon Slayer']); */
