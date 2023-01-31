@@ -1,17 +1,14 @@
 import React from 'react';
 
 // !componetes:
-import { InputAddCategorias } from './components/InputAddCategorias';
-import { GiftGrid } from './components/GiftGrid';
-
-//!componentes:
+import { GiftGrid, InputAddCategorias } from './components';
 
 // ! Hooks:
 import { useState } from 'react';
 
 function App() {
     // !hooks:
-    const [categorias, setCategorias] = useState([]);
+    const [categorias, setCategorias] = useState(['Nasa']); //img predeterminada al inicio
 
     const agragarCategoria = (nuevaCategoria) => {
         /* setCategorias([...categorias, 'Dragon Slayer']); */

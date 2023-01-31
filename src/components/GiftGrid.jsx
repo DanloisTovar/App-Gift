@@ -1,18 +1,27 @@
 import React from 'react';
 
-// import api:
-import { getGifts } from '../helpers/apiFethc';
+// !importar custom hooks:
+import { useFetchGifts } from '../hooks';
 
-// llamando a la api:
+// !importar componentes:
+import { GiftItem } from './GiftItem';
 
 export const GiftGrid = ({ categoria }) => {
-    // fethc:
-    getGifts(categoria);
+    // !hooks:
+    const { newImages, isLoading } = useFetchGifts(categoria);
 
     return (
         <>
             <h3>{categoria}</h3>
-            <p>Hola Mundo</p>
+            {isLoading && (
+                <p className="animate__animated animate__flash">Loading...</p>
+            )}
+
+            <div className="card-grid">
+                {newImages.map((imagen) => (
+                    <GiftItem key={imagen.id} {...imagen} />
+                ))}
+            </div>
         </>
     );
 };
