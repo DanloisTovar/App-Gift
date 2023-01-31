@@ -1,40 +1,38 @@
 import React from 'react';
+
+// !componetes:
+import { InputAddCategorias } from './components/InputAddCategorias';
+import { GiftGrid } from './components/GiftGrid';
+
+//!componentes:
+
 // ! Hooks:
 import { useState } from 'react';
 
 function App() {
-    const [categorias, setCategorias] = useState(['One Punch', 'Dragon Ball']);
-    console.log(categorias);
+    // !hooks:
+    const [categorias, setCategorias] = useState([]);
 
-    const agragarCategoria = () => {
+    const agragarCategoria = (nuevaCategoria) => {
         /* setCategorias([...categorias, 'Dragon Slayer']); */
 
+        if (categorias.includes(nuevaCategoria)) return;
         /* ultimo elemento en entrar primero en mostrar: */
-        setCategorias(['Dragon Slayer', ...categorias]);
-        /* setCategorias((categorias) => [...categorias, 'Dragon Slayer']); */
+        setCategorias([nuevaCategoria, ...categorias]);
+        /* setCategorias((categorias) => [...categorias, nuevaCategoria]); */
     };
     return (
         <div className="App">
             {/* titulo */}
             <h1>App Gift</h1>
+
             {/* metodo de entrada (input) */}
+            <InputAddCategorias onAddCategorias={agragarCategoria} />
 
             {/* lista de items */}
-
-            <button onClick={agragarCategoria}>Agregar</button>
-
-            <ol>
-                {categorias.map((categoria, i) => {
-                    return (
-                        <div key={i}>
-                            <li>{categoria}</li>
-                            <br />
-                        </div>
-                    );
-                })}
-            </ol>
-
-            {/* item */}
+            {categorias.map((categoria) => (
+                <GiftGrid key={categoria} categoria={categoria} />
+            ))}
 
             {/* footer */}
         </div>
