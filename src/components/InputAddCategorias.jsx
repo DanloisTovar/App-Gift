@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // !hooks:
 import { useState } from 'react';
 
@@ -34,4 +35,8 @@ export const InputAddCategorias = ({ onAddCategorias }) => {
             <br></br>
         </form>
     );
+};
+
+InputAddCategorias.propTypes = {
+    onAddCategorias: PropTypes.func.isRequired,
 };
