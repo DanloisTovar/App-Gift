@@ -23,7 +23,7 @@ export const InputAddCategorias = ({ onAddCategorias }) => {
     };
 
     return (
-        <form onSubmit={handleOnSubmit}>
+        <form onSubmit={handleOnSubmit} aria-label="formulario">
             <br></br>
             <input
                 type="text"
