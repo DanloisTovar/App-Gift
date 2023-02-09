@@ -1,5 +1,8 @@
 import React from 'react';
 
+// !proptypes:
+import PropTypes from 'prop-types';
+
 // !importar custom hooks:
 import { useFetchGifts } from '../hooks';
 
@@ -24,4 +27,8 @@ export const GiftGrid = ({ categoria }) => {
             </div>
         </>
     );
+};
+
+GiftGrid.propTypes = {
+    categoria: PropTypes.string.isRequired,
 };
