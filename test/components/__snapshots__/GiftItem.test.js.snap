@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prueba de funcionamiento jest  verificar PropTypes y hacer snapshot  1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Hola Mundo"
+      src="https://localhost:3000"
+    />
+    <p>
+      Hola Mundo
+    </p>
+  </div>
+</div>
+`;
